@@ -1,4 +1,4 @@
-export default function HomePage() {
+export default function NotFound() {
   return (
     <div
       style={{
@@ -16,20 +16,17 @@ export default function HomePage() {
     >
       <h1
         style={{
-          fontSize: "clamp(48px, 8vw, 100px)",
+          fontSize: 72,
           fontWeight: 700,
-          textTransform: "uppercase",
-          lineHeight: 0.92,
-          letterSpacing: "-0.02em",
-          marginBottom: 24,
+          color: "rgba(26,122,60,0.2)",
+          lineHeight: 1,
+          marginBottom: 16,
         }}
       >
-        Zou
-        <br />
-        <span style={{ color: "#1a7a3c" }}>Doctors</span>
+        404
       </h1>
       <p style={{ color: "#888", fontSize: 14, letterSpacing: "0.1em" }}>
-        Propostas Comerciais
+        Proposta não encontrada
       </p>
     </div>
   );
