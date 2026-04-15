@@ -1,6 +1,7 @@
 import { supabase } from "@/lib/supabase";
 import { Proposta } from "@/lib/types";
 import PropostaTemplate from "@/components/PropostaTemplate";
+import RawHtmlProposta from "@/components/RawHtmlProposta";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
@@ -39,5 +40,13 @@ export default async function PropostaPage({ params }: PageProps) {
     notFound();
   }
 
-  return <PropostaTemplate data={data as Proposta} />;
+  const proposta = data as Proposta;
+
+  // Se a proposta tem HTML cru cadastrado, renderiza ele direto (cada prospect
+  // pode ter design totalmente customizado)
+  if (proposta.html_raw && proposta.html_raw.trim().length > 0) {
+    return <RawHtmlProposta html={proposta.html_raw} />;
+  }
+
+  return <PropostaTemplate data={proposta} />;
 }

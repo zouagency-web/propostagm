@@ -115,4 +115,7 @@ export interface Proposta {
 
   // WhatsApp
   whatsapp_numero: string;
+
+  // HTML cru (quando preenchido, renderiza HTML customizado em vez do template)
+  html_raw?: string | null;
 }

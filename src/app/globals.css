@@ -60,7 +60,7 @@ nav {
   border-bottom: 1px solid var(--border);
 }
 .nav-logo img {
-  height: 36px;
+  height: 56px;
   width: auto;
   mix-blend-mode: screen;
 }
